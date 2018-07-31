@@ -50,7 +50,6 @@ Step 2: Copy and paste the following files into the base directory of your missi
    -    onPlayerRespawn.sqf
    -    stringtable.xml
    -    description.ext
-	
 	The directory will now look like:
 	`missionNamespace\_aboveFiles_`
 
