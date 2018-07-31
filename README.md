@@ -19,6 +19,8 @@ Credits:
 	TAW_VD - Wonderful script, will be replacing soon with a personal-made version.
 
 
+**IF YOU WISH TO INSTALL THIS FRAMEWORK - PLEASE FOLLOW THE STEPS BELOW!**
+
 Note:
 
 DO NOT delete any information in /* _Text_ */. This contains licensing and info about the script.
