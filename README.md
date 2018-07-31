@@ -40,19 +40,19 @@ Installing this framework :
 
 Step 1: Take the folder "Curious's Framework" and place it into the base directory of your mission file.
 	The Folder stucture will now look like:
-	missionNamespace\Curious's Framework
+	`missionNamespace\Curious's Framework`
 
 Step 2: Copy and paste the following files into the base directory of your mission file:
-	initPlayerLocal.sqf
+	`initPlayerLocal.sqf
 	initPlayerServer.sqf
 	initServer.sqf
 	init.sqf
 	onPlayerRespawn.sqf
 	stringtable.xml
-	description.ext
+	description.ext`
 	
 	The directory will now look like:
-	missionNamespace\_aboveFiles_
+	`missionNamespace\_aboveFiles_`
 
 Step 3: Download "http://www.armaholic.com/page.php?id=19751" and place in the base directory. Follow
 	any relevent documentation to ensure the view distance script works correctly.
