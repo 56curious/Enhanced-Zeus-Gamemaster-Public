@@ -44,14 +44,15 @@ Step 1: Take the folder "Curious's Framework" and place it into the base directo
 
 Step 2: Copy and paste the following files into the base directory of your mission file:
    -    `initPlayerLocal.sqf`
-   -    initPlayerServer.sqf
-   -    initServer.sqf
-   -    init.sqf
-   -    onPlayerRespawn.sqf
-   -    stringtable.xml
-   -    description.ext
+   -    `initPlayerServer.sqf`
+   -    `initServer.sqf`
+   -    `init.sqf`
+   -    `onPlayerRespawn.sqf`
+   -    `stringtable.xml`
+   -    `description.ext`
 
-	The directory will now look like:
+
+The directory will now look like:
 	`missionNamespace\_aboveFiles_`
 
 Step 3: Download "http://www.armaholic.com/page.php?id=19751" and place in the base directory. Follow
