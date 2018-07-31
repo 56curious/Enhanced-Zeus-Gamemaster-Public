@@ -12,19 +12,20 @@ License:        This file is under "Arma Public License No Derivatives (APL-ND)"
 Example:        N/A
 
 */
+missionnamespace setVariable ["CUR_Initial_Respawn_Passed", 0];
+missionnamespace setVariable ["CUR_RespawnSetup", 0];
 
-sleep 1;
+sleep 0.01;
 PositionDefined = getMarkerPos selectRandom ["RandomPos1","RandomPos2","RandomPos3","RandomPos4","RandomPos5","RandomPos6","RandomPos7","RandomPos8","RandomPos9"];
-DefaultSpawnPoint setPos PositionDefined;
+RespawnPos = [west, [PositionDefined select 0 ,PositionDefined select 1, 0], "Default Spawn Point"] call BIS_fnc_addRespawnPosition;
 
 execVM "Curious's Framework\Scripts\Params\paramFog.sqf";
 execVM "Curious's Framework\Scripts\Params\paramGodMode.sqf";
 execVM "Curious's Framework\Scripts\Params\paramGurFriendly.sqf";
 execVM "Curious's Framework\Scripts\Params\paramMaxTime.sqf";
 execVM "Curious's Framework\Scripts\Params\paramModRights.sqf";
-execVM "Curious's Framework\Scripts\Misc\Features\Earplugs.sqf";
 
-sleep 1;
+sleep 0.01;
 
 musicNames = ("isClass _x" configClasses (configFile >> "cfgMusic")) apply {
 		[
@@ -44,3 +45,6 @@ while {true} do
     } foreach allMapMarkers;
     sleep 1;
 };
+
+sleep 300;
+RespawnPos call BIS_fnc_removeRespawnPosition;

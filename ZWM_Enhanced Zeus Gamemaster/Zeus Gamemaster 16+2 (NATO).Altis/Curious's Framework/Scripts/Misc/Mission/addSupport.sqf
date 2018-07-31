@@ -92,11 +92,11 @@ _UnitLeader = leader player;
 
 //Call functions
 	//setup limits
-	[(leader player), _lb0Active, _lb5Active] call BIS_fnc_limitSupport;
-	[(leader player), _lb1Active, _lb6Active] call BIS_fnc_limitSupport;
-	[(leader player), _lb2Active, _lb7Active] call BIS_fnc_limitSupport;
-	[(leader player), _lb3Active, _lb8Active] call BIS_fnc_limitSupport;
-	[(leader player), _lb4Active, _lb9Active] call BIS_fnc_limitSupport;
+	[(leader player), str _lb0Active, parseNumber _lb5Active] call BIS_fnc_limitSupport;
+	[(leader player), str _lb1Active, parseNumber _lb6Active] call BIS_fnc_limitSupport;
+	[(leader player), str _lb2Active, parseNumber _lb7Active] call BIS_fnc_limitSupport;
+	[(leader player), str _lb3Active, parseNumber _lb8Active] call BIS_fnc_limitSupport;
+	[(leader player), str _lb4Active, parseNumber _lb9Active] call BIS_fnc_limitSupport;
 
 
 

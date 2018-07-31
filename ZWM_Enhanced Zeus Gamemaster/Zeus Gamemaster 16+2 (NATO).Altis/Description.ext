@@ -14,16 +14,15 @@ Example:		N/A
 */
 
 dev = "Curious";
-respawnOnStart = 0;
+respawnOnStart = 1;
 respawnDelay = 10;
 respawnVehicleDelay = 30;
 respawn = 3;
-respawnTemplates[] = {"MenuPosition","MenuInventory","Tickets"};
+respawnTemplates[] = {"MenuPosition","MenuInventory","Tickets", "Spectator"};
 respawnTemplatesVirtual[] = {};
-
 loadScreen = __EVAL(selectRandom ["media\loadingScreen1.paa","media\loadingScreen2.paa","media\loadingScreen3.paa","media\loadingScreen4.paa"]);
 overviewPicture = __EVAL(selectRandom ["media\loadingScreen1.paa","media\loadingScreen2.paa","media\loadingScreen3.paa","media\loadingScreen4.paa"]);
-
+briefingName = $STR_A3_moduleMPTypeGameMaster_onLoadName_Malden;
 
 disabledAI = 1;
 joinUnassigned = 1;
@@ -85,8 +84,8 @@ class Params
 		texts[] = {"MORNING","DAY","EVENING","NIGHT"};
 		values[] = {6,12,18,0};
 		default = 12;
-		function = "BIS_fnc_paramDaytime"; // (Optional) [[Functions_Library_(Arma_3)|Function]] [[call]]ed when player joins, selected value is passed as an argument
-		isGlobal = 1; // (Optional) 1 to execute script / function locally for every player who joins, 0 to do it only on server
+		function = "BIS_fnc_paramDaytime";
+		isGlobal = 1;
 	};
 	class Fog
 	{
@@ -133,6 +132,7 @@ class Params
 //Dialogs
 #include "Curious's Framework\Dialogs\dialogDefines.hpp"
 #include "Curious's Framework\Dialogs\introCreator.hpp"
+#include "Curious's Framework\Dialogs\CuratorInfo.hpp"
 #include "Curious's Framework\Dialogs\Sub_Intro\typeText.hpp"
 #include "Curious's Framework\Dialogs\Zeus Menu\ZeusMenu.hpp"
 #include "Curious's Framework\Dialogs\Zeus Menu\ZeusSupports.hpp"
@@ -145,6 +145,7 @@ class Params
 #include "Curious's Framework\Dialogs\Admin Menu\intro1.hpp"
 #include "Curious's Framework\Dialogs\Admin Menu\TrackSelector.hpp"
 #include "Curious's Framework\Dialogs\View Distance\ViewDistance.hpp"
+#include "Curious's Framework\Dialogs\One_Respawn.hpp"
 #include "taw_vd\GUI.h"
 
 class CfgFunctions
@@ -184,6 +185,7 @@ class CfgRespawnInventory
 		displayName = "Engineer";
 		show = "side group _this == west";
 		role = "EZGM_Loadouts";
+		isEngineer = 1;
 
 
 		weapons[] = {

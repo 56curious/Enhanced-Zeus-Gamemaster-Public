@@ -64,7 +64,7 @@ class UserSettings
 		class RscText_1002: RscText
 		{
 			idc = 1002;
-			text = "Enable Mine Hints?"; //--- ToDo: Localize;
+			text = "Skip Loading Phase Forever?"; //--- ToDo: Localize;
 			x = 0.422656 * safezoneW + safezoneX;
 			y = 0.368 * safezoneH + safezoneY;
 			w = 0.180469 * safezoneW;
@@ -166,7 +166,7 @@ class UserSettings
 			y = 0.687 * safezoneH + safezoneY;
 			w = 0.103125 * safezoneW;
 			h = 0.044 * safezoneH;
-			action ="(findDisplay 46) displayAddEventHandler [""KeyDown"",SettingsMenuEH]; _Display = findDisplay 4561234; systemChat str _Display; _Control_FPPLocked = _Display displayCtrl 2800;_Control_MineHints = _Display displayCtrl 2801;_Control_MapInfo = _Display displayCtrl 2802;_Control_FriendlyTags = _Display displayCtrl 2803;_Control_Fatigue = _Display displayCtrl 2804;_FPPLocked = cbChecked _Control_FPPLocked;_MineHints = cbChecked _Control_MineHints;_MapInfo = cbChecked _Control_MapInfo;_FriendlyTags = cbChecked _Control_FriendlyTags;_Fatigue = cbChecked _Control_Fatigue;_Channels = ctrlText 1401;_ViewDistance = ctrlText 1400; [_FPPLocked, _MineHints, _MapInfo, _FriendlyTags, _Fatigue, _Channels, _ViewDistance] execVM ""Scripts\Admin Menu\Kits\Settings.sqf""; closeDialog 0;";
+			action ="_Display = findDisplay 4561234; systemChat str _Display; _Control_FPPLocked = _Display displayCtrl 2800;_Control_SkipLoading = _Display displayCtrl 2801;_Control_MapInfo = _Display displayCtrl 2802;_Control_FriendlyTags = _Display displayCtrl 2803;_Control_Fatigue = _Display displayCtrl 2804;_FPPLocked = cbChecked _Control_FPPLocked;_SkipLoading = cbChecked _Control_SkipLoading;_MapInfo = cbChecked _Control_MapInfo;_FriendlyTags = cbChecked _Control_FriendlyTags;_Fatigue = cbChecked _Control_Fatigue;_Channels = ctrlText 1401;_ViewDistance = ctrlText 1400; [_this select 0, _FPPLocked, _SkipLoading, _MapInfo, _FriendlyTags, _Fatigue, _Channels, _ViewDistance] execVM ""Curious's Framework\Scripts\Admin Menu\Kits\Settings.sqf""; closeDialog 0;";
 
 		};
 		////////////////////////////////////////////////////////

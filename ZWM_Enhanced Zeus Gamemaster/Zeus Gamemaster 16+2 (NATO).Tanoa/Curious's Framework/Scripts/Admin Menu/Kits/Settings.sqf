@@ -13,12 +13,12 @@ Example:        N/A
 
 */
 
-params ["_FPPLocked", "_MineHints", "_MapInfo", "_FriendlyTags", "_Fatigue", "_Channels", "_ViewDistance"];
+params ["_FPPLocked", "_SkipLoading", "_MapInfo", "_FriendlyTags", "_Fatigue", "_Channels", "_ViewDistance"];
 
 
 hint "Exporting Options";
 sleep 5;
-hint format ["%1 %2 %3 %4 %5 %6 %7", _FPPLocked, _MineHints, _MapInfo, _FriendlyTags, _Fatigue, _Channels, _ViewDistance]; // displays the return values of the params
+hint format ["%1 %2 %3 %4 %5 %6 %7", _FPPLocked, _SkipLoading, _MapInfo, _FriendlyTags, _Fatigue, _Channels, _ViewDistance]; // displays the return values of the params
 
 
 //
@@ -40,18 +40,18 @@ CTRL_FPPLock ctrladdEventHandler ["onCheckedChanged", {
     If (FPPLocked) then {
         EH_FPPLocked = player addEventHandler ["Respawn", {
 
-    	[] spawn {
-			while {(true)} do
-			{
-				if (cameraView == "External") then
-				{
-					if ((vehicle player) == player) then
-					{
-						player switchCamera "Internal";
-					};
-				};
-			};
-		};
+        [] spawn {
+            while {(true)} do
+            {
+                if (cameraView == "External") then
+                {
+                    if ((vehicle player) == player) then
+                    {
+                        player switchCamera "Internal";
+                    };
+                };
+            };
+        };
 }];
     };
 }];
@@ -61,11 +61,16 @@ SystemChat "First Person toggle is currently not working. Sorry for any inconven
 
 //
 //
-//Mine Hints
+//Skip Loading
 //
 //
 
-SystemChat "Mine Hints toggle is currently not working. Sorry for any inconvenience.";
+if (_SkipLoading isEqualTo true) then {
+    profileNamespace setVariable ["CUR_LoadingSetup", 1];
+    sleep 1;
+    saveProfileNamespace;
+    hint "Loading phase skipped forever. To return to the feature, please contact an admin."
+};
 
 
 //
@@ -91,7 +96,7 @@ SystemChat "Mine Hints toggle is currently not working. Sorry for any inconvenie
 //
 //
 
-        player enableFatigue _Fatigue;
+[_this select 0, _Fatigue] remoteExec ["enableFatigue", _this select 0, false];
 
 //
 //
@@ -124,12 +129,13 @@ SystemChat "Channel toggle is currently not working. Sorry for any inconvenience
 //
 //
 
-setViewDistance _ViewDistance;
-setObjectViewDistance _ViewDistance;
+ ;
+
+[_ViewDistance] remoteExec ["setViewDistance", _this select 0, false];
 
 sleep 2;
 
-0 = execVM "Curious's Framework\Dialogs\Settings Menu\SoldierTracking.sqf";
+execVM "Curious's Framework\Dialogs\Settings Menu\SoldierTracking.sqf";
 
 
 
@@ -181,7 +187,7 @@ CUR_FPPLock = {
 ["CUR_FPPEH", "onEachFrame", {(vehicle player) switchCamera "cargo"}] call BIS_fnc_addStackedEventHandler;
 
 waituntil {!(IsNull (findDisplay 46))};
-_keyDown = (findDisplay 46) displayAddEventHandler ["KeyDown", "if (_this select 1 == 65665,82) then {  hint RightClicked.	;}"];
+_keyDown = (findDisplay 46) displayAddEventHandler ["KeyDown", "if (_this select 1 == 65665,82) then {  hint RightClicked.  ;}"];
 
 
 

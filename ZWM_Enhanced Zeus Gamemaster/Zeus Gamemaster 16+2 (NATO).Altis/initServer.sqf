@@ -17,14 +17,3 @@ Example:		N/A
 	_x allowCuratorLogicIgnoreAreas true;
 	[_x,"Man"] call bis_fnc_removeDestroyedCuratorEditableObjects;
 } foreach allCurators;
-
-curator = allcurators select 0;
-curators = allcurators;
-
-{
-	if (_x call bis_fnc_isCurator) then {
-		if !(_x in curators) then {
-			curators set [count curators,_x];
-		};
-	};
-} foreach (_logic call bis_fnc_allsynchronizedobjects);

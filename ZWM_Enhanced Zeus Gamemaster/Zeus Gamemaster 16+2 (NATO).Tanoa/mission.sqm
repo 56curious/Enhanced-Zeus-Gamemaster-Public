@@ -101,7 +101,7 @@ class AddonsMetaData
 randomSeed=1888763;
 class ScenarioData
 {
-	author="Curious, Requested Everywhere";
+	author="Curious";
 	overviewText="<t underline='true'>Enhanced Zeus Gamemaster.</t> Please choose this mission file if you would like the play on this map, no matter the faction. Thanks to our support, you are able to switch all of the players to a specific side. ";
 	overviewTextLocked="<t underline='true'>Enhanced Zeus Gamemaster.</t> Please choose this mission file if you would like the play on this map, no matter the faction. Thanks to our support, you are able to switch all of the players to a specific side. ";
 	onLoadMission="Welcome to Enhanced Zeus Gamemaster (EZGM). Please read the server information via the map tabs in-game. Development Stage: ALPHA - Report Bugs.";
@@ -679,7 +679,7 @@ class Mission
 	appId=639600;
 	class Intel
 	{
-		briefingName="Enhanced Zeus Gamemaster";
+		briefingName="$STR_A3_moduleMPTypeGameMaster_onLoadName_Altis";
 		overviewText="Enhanced Zeus Gamemaster - Version 1.1.2";
 		resistanceWest=0;
 		resistanceEast=1;
