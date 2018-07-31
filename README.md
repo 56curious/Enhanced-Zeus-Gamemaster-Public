@@ -43,13 +43,13 @@ Step 1: Take the folder "Curious's Framework" and place it into the base directo
 	`missionNamespace\Curious's Framework`
 
 Step 2: Copy and paste the following files into the base directory of your mission file:
-	`-initPlayerLocal.sqf
+	-initPlayerLocal.sqf
 	-initPlayerServer.sqf
 	-initServer.sqf
 	-init.sqf
 	-onPlayerRespawn.sqf
 	-stringtable.xml
-	-description.ext`
+	-description.ext
 	
 	The directory will now look like:
 	`missionNamespace\_aboveFiles_`
