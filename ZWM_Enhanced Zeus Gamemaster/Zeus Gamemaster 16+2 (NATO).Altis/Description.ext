@@ -22,7 +22,7 @@ respawnTemplates[] = {"MenuPosition","MenuInventory","Tickets", "Spectator"};
 respawnTemplatesVirtual[] = {};
 loadScreen = __EVAL(selectRandom ["media\loadingScreen1.paa","media\loadingScreen2.paa","media\loadingScreen3.paa","media\loadingScreen4.paa"]);
 overviewPicture = __EVAL(selectRandom ["media\loadingScreen1.paa","media\loadingScreen2.paa","media\loadingScreen3.paa","media\loadingScreen4.paa"]);
-briefingName = $STR_A3_moduleMPTypeGameMaster_onLoadName_Malden;
+briefingName = "Zeus Gamemaster 16+2 (NATO)";
 
 disabledAI = 1;
 joinUnassigned = 1;

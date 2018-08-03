@@ -679,7 +679,7 @@ class Mission
 	appId=639600;
 	class Intel
 	{
-		briefingName="$STR_A3_moduleMPTypeGameMaster_onLoadName_Altis";
+		briefingName="Zeus Gamemaster 16+2 (NATO)";
 		overviewText="Enhanced Zeus Gamemaster - Version 1.1.2";
 		resistanceWest=0;
 		resistanceEast=1;
