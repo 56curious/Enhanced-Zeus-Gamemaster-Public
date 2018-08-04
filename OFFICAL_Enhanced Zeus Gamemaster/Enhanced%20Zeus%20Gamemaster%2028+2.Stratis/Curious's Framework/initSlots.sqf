@@ -1,6 +1,6 @@
 
 
-
+/*
 //Blacklist Zeus Slots
 _BlacklistedUIDs = [""];
 _CuratorSlot = [curatorUnit, curatorUnit_1];
@@ -24,3 +24,4 @@ if (getPlayerUID player in _WhitelistUIDs) then {
 	};
 
 };
+*/

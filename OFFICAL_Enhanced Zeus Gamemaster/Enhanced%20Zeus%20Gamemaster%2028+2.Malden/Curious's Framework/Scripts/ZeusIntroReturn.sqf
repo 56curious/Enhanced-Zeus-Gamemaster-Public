@@ -6,6 +6,12 @@ Author:         Curious
 Description:    Run an intro and finish loading if player has been on the server
                 before.
 
+                To gain access back, please exec the following for the client:
+
+                profileNamespace setVariable ["CUR_LoadingSetup", 0];
+                sleep 1;
+                saveProfileNamespace;
+
 License:        This file is under "Arma Public License No Derivatives (APL-ND)"
                 More information can be found at:
                 https://www.bohemia.net/community/licenses/arma-public-license-nd
@@ -13,6 +19,11 @@ License:        This file is under "Arma Public License No Derivatives (APL-ND)"
 Example:        N/A
 
 */
+
+_LoadingSkipped = profileNamespace getVariable ["CUR_LoadingSetup", 0];
+hint str _LoadingSkipped;
+sleep 0.1;
+if (_LoadingSkipped isEqualTo 1) then { titlecut ["","BLACK IN",3]; [1,3,false,false] call BIS_fnc_cinemaBorder; } else {
 
 Bis_printText =
 {
@@ -98,22 +109,26 @@ sleep 3;
         0 fadeMusic 0;
         playMusic "LeadTrack03_F_Bootcamp";
         7 fadeMusic 1;
-        _rnd = random [20, 23, 30];
+        _rnd = random [10, 13, 15];
         _subtitles = [
             [ "System",         "Loading, please wait. This may take some time...", 0],
-            [ "System",         "Almost done, final touches...", random [8, 12, 16]],
+            [ "System",         "Almost done, final touches...", random [4, 6, 8]],
             [ "System",         "Loading complete, transmitting data...", _rnd]
         ];
         _subtitles spawn BIS_fnc_EXP_camp_playSubtitles;
 
         sleep 5;
-        [] call BIS_printSampleText;
-        _RemainingTime = _rnd - 8;
-        sleep _RemainingTime;
-        titlecut ["","BLACK IN",5];
-        player setDamage 1;
         disableUserInput false;
+        sleep 0.001;
+        [] call BIS_printSampleText;
+        _RemainingTime = _rnd - 4;
+        sleep _RemainingTime;
+        player setPos PositionDefined;
+        //createDialog "Respawn_Screen_Onetime";
+        titlecut ["","BLACK IN",6];
+        [1,6,false,false] call BIS_fnc_cinemaBorder;
         7 fadeMusic 0;
         sleep 7;
         playMusic "";
         0 fadeMusic 1;
+};

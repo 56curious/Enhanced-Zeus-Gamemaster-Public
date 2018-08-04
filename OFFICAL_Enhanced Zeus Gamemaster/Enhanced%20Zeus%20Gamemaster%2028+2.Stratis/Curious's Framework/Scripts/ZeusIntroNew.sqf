@@ -96,16 +96,17 @@ Bis_printSampleText =
 sleep 3;
         disableUserInput true;
 
-        _rnd = random [20, 23, 30];
+        _rnd = random [10, 13, 15];
         _subtitles = [
             [ "System",         "Loading, please wait. This may take some time...", 0],
-            [ "System",         "Almost done, final touches...", random [8, 12, 16]],
+            [ "System",         "Almost done, final touches...", random [4, 6, 8]],
             [ "System",         "Loading complete, transmitting data...", _rnd]
         ];
         _subtitles spawn BIS_fnc_EXP_camp_playSubtitles;
 
         sleep _rnd;
         sleep 2;
+        disableUserInput false;
         0 fadeMusic 0.3;
         playMusic ["EventTrack02_F_EPC", 7.90];
         7 fadeMusic 1;
@@ -125,21 +126,18 @@ sleep 3;
         _camera camPrepareFOV 0.700;
         _camera camCommitPrepared 20;
         sleep 2;
+
         [] call BIS_printSampleText;
-
-
-
         sleep 11;
-
         titlecut ["","BLACK OUT",5];
         sleep 5;
         _camera cameraEffect ["terminate", "back"];
         camDestroy _camera;
-        player setDamage 1;
+        player setPos PositionDefined;
         sleep 3;
         titlecut ["","BLACK IN",6];
         [1,6,false,false] call BIS_fnc_cinemaBorder;
-        disableUserInput false;
+
         7 fadeMusic 0;
         sleep 7;
         playMusic "";

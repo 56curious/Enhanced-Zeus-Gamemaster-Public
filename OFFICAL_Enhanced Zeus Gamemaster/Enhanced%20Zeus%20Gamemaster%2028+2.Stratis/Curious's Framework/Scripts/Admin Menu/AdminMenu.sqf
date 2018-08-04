@@ -21,18 +21,18 @@ switch (_CurrentAdmin) do {
 
 	case 1: {
 		waituntil {!(IsNull (findDisplay 46))};
-		_keyDown = (findDisplay 46) displayAddEventHandler ["KeyDown", "if (_this select 1 == 61) then {	createDialog ""AdminMenu""; hint ""Admin Menu Created."";}"];
+		_keyDown = (findDisplay 46) displayAddEventHandler ["KeyDown", "if (_this select 1 == 61) then {	createDialog ""AdminMenu""; hint ""Admin Menu Created.""; if (_this select 1 == 61) then {closeDialog 0; createDialog ""AdminMenu"";};}"];
 
 		waituntil {!(IsNull (findDisplay 312))};
-		_keyDown = (findDisplay 312) displayAddEventHandler ["KeyDown", "if (_this select 1 == 61) then { createDialog ""AdminMenu""; hint ""Admin Menu Created."";}"];
+		_keyDown = (findDisplay 312) displayAddEventHandler ["KeyDown", "if (_this select 1 == 61) then { createDialog ""AdminMenu""; hint ""Admin Menu Created.""; if (_this select 1 == 61) then {closeDialog 0; createDialog ""AdminMenu"";};}"];
 		hint "Press F5 to unlock the Admin Menu!";
 	};
 	case 2: {
 		waituntil {!(IsNull (findDisplay 46))};
-		_keyDown = (findDisplay 46) displayAddEventHandler ["KeyDown", "if (_this select 1 == 61) then {	createDialog ""AdminMenu""; hint ""Admin Menu Created."";}"];
+		_keyDown = (findDisplay 46) displayAddEventHandler ["KeyDown", "if (_this select 1 == 61) then {	createDialog ""AdminMenu""; hint ""Admin Menu Created.""; if (_this select 1 == 61) then {closeDialog 0; createDialog ""AdminMenu"";};}"];
 
 		waituntil {!(IsNull (findDisplay 312))};
-		_keyDown = (findDisplay 312) displayAddEventHandler ["KeyDown", "if (_this select 1 == 61) then { createDialog ""AdminMenu""; hint ""Admin Menu Created."";}"];
+		_keyDown = (findDisplay 312) displayAddEventHandler ["KeyDown", "if (_this select 1 == 61) then { createDialog ""AdminMenu""; hint ""Admin Menu Created.""; if (_this select 1 == 61) then {closeDialog 0; createDialog ""AdminMenu"";};}"];
 		hint "Press F3 to unlock the Admin Menu!";
 	};
 	case 0: {
@@ -46,9 +46,9 @@ if (getPlayerUID player in RequestedEverywhereAdmins) then {
 
 	SystemChat format ["Welcome back %1! Press F3 to open the admin menu. Extra menu coming soon...", name player];
 	waituntil {!(IsNull (findDisplay 46))};
-	_keyDown = (findDisplay 46) displayAddEventHandler ["KeyDown", "if (_this select 1 == 61) then {	createDialog ""AdminMenu""; hint ""Admin Menu Created."";}"];
+	_keyDown = (findDisplay 46) displayAddEventHandler ["KeyDown", "if (_this select 1 == 61) then {	createDialog ""AdminMenu""; hint ""Admin Menu Created.""; if (_this select 1 == 61) then {closeDialog 0; createDialog ""AdminMenu"";};}"];
 
 	waituntil {!(IsNull (findDisplay 312))};
-	_keyDown = (findDisplay 312) displayAddEventHandler ["KeyDown", "if (_this select 1 == 61) then { createDialog ""AdminMenu""; hint ""Admin Menu Created."";}"];
+	_keyDown = (findDisplay 312) displayAddEventHandler ["KeyDown", "if (_this select 1 == 61) then { createDialog ""AdminMenu""; hint ""Admin Menu Created.""; if (_this select 1 == 61) then {closeDialog 0; createDialog ""AdminMenu"";};}"];
 
 };

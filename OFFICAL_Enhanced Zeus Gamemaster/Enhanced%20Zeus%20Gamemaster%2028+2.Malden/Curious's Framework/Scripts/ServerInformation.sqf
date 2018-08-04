@@ -86,6 +86,22 @@ player createDiaryRecord ["information",
 [
 "Server Changelog",
 "
+<br />V 1.1.3 - 31st Jul 2018
+<br />
+<br />- [UPDATED] Adjusted init files to run smoother.
+<br />- [UPDATED] Changed settings menu to incorp new features.
+<br />- [UPDATED] Moved file structure to better run with the unit selected. For example Curator scripts run from a Curator file.
+<br />- [ADDED] Custom images that are chosen randomly.
+<br />- [ADDED] Curator information on load of the curator.
+<br />- [ADDED] Earplugs to work in Zeus too.
+<br />- [ADDED] Ability to choose to skip the intros/loading phase via the settings menu.
+<br />- [CHANGED] Closed support for whitelisted Curators to have access to exec module. WILL RETURN.
+<br />- [FIXED] Custom modules not loading.
+<br />- [FIXED] File: initRespawn.sqf
+<br />- [FIXED] Initial spawn for all players and the way the mission deals with the first respawn.
+<br />
+<br />
+<br />
 <br />V 1.1.2 - 10th Jul 2018
 <br />
 <br />- [UPDATED] Various scripts to run smoother.
